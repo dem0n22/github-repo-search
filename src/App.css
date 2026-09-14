@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* FONTS */
+  --FF: "Noto Sans", sans-serif;
+
+  /* COLORS */
+  --COLOR-WHITE: #FFFFFF;
+  --COLOR-BLUE-50: #438EFF;
+  --COLOR-BLUE-100: #58A6FF;
+  --COLOR-BLUE-200: #3572A5;
+  --COLOR-BLUE-300: #3178C6;
+  --COLOR-BLUE-400: #1F6FEB;
+  --COLOR-BLUE-500: #4F5D95;
+  --COLOR-ORANGE-100: #DA5B0B;
+  --COLOR-ORANGE-200: #F05138;
+  --COLOR-GREEN: #178600;
+  --COLOR-YELLOW-100: #F1E05A;
+  --COLOR-YELLOW-200: #B07219;
+  --COLOR-RED: #DA3434;
+  --COLOR-TURQUOISE: #578896;
+  --COLOR-PURPLE-100: #A97BFF;
+  --COLOR-PURPLE-200: #7355DD;
+  --COLOR-PURPLE-300: #663399;
+  --COLOR-MUSTARD: #B07219;
+  --COLOR-PINK-100: #F34B7D;
+  --COLOR-PINK-200: #C6538C;
+  --COLOR-GRAY: #555555;
+  --COLOR-CREAM: #DEA584;
+}
+
+[data-theme="dark"] {
+  --COLOR-BACKGROUND-PAGE: #0D1117;
+  --COLOR-BACKGROUND-CARD: #0D1117;
+  --COLOR-BACKGROUND-HEADER: #010409;
+  --COLOR-BACKGROUND-BUTTON-HOVER: #15191F;
+  --COLOR-BORDER-HEADER: #3D444D;
+  --COLOR-BORDER-CARD: #3D444D;
+  --COLOR-BORDER-BUTTON: #3D444D;
+  
+  --COLOR-BORDER-CARD: #30363D;
+  --COLOR-TEXT-PRINCIPAL: #C9D1D9;
+  --COLOR-TEXT-SECONDARY: #9198A1;
+  --COLOR-TEXT-REPOSITORY: var(--COLOR-BLUE-100);
+
+  --COLOR-ICON: #9198A1;
+
+  --skeleton-base: var(--COLOR-TEXT-SECONDARY);
+  --skeleton-highlight: var(--COLOR-TEXT-PRINCIPAL);
+}
+
+[data-theme="light"] {
+  --COLOR-BACKGROUND-PAGE: var(--COLOR-WHITE);
+  --COLOR-BACKGROUND-CARD: var(--COLOR-WHITE);
+  --COLOR-BACKGROUND-HEADER: #F6F8FA;
+  --COLOR-BACKGROUND-BUTTON-HOVER: #EAEDF0;
+  --COLOR-BORDER-HEADER: #D1D9E0;
+  --COLOR-BORDER-CARD: #D1D9E0;
+  --COLOR-BORDER-BUTTON: #D1D9E0;
+
+  --COLOR-TEXT-PRINCIPAL: #000000;
+  --COLOR-TEXT-SECONDARY: #59636E;
+  --COLOR-TEXT-REPOSITORY: var(--COLOR-BLUE-400);
+
+  --COLOR-ICON: #59636E;
+
+  --skeleton-base: var(--COLOR-BORDER-CARD);
+  --skeleton-highlight: #e1e7ec;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  overflow: hidden;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  background-color: var(--COLOR-BACKGROUND-PAGE );
+}
+
+.icon, .icon-link {
+  width: 16px;
+  height: 16px;
+  color: var(--COLOR-ICON);
+}
+
+.icon-link:hover {
+  cursor: pointer;
+  color: var(--COLOR-BLUE-300);
+}
+
+button {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  outline: 1px solid var(--COLOR-BORDER-BUTTON);
+  padding: 8px;
+}
+
+button:hover {
+  background-color: var(--COLOR-BACKGROUND-BUTTON-HOVER);
+}
+
+.wrapper_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 18px;
+  border-bottom: 1px solid var(--COLOR-BORDER-HEADER);
+  background-color: var(--COLOR-BACKGROUND-HEADER);
+}
+
+.content_body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: calc(100vh - 68.8px);
+}
+
+.state_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  
+  color: var(--COLOR-TEXT-SECONDARY);
+}
+
+.state_search {
+  font: 600 large/1.5 var(--FF);
+}
+
+.error_state {
+  font: bold 64px/1.5 var(--FF);
+}
+
+.error_description {
+  font: 600 large/1.5 var(--FF);
+}

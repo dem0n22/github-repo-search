@@ -1,0 +1,11 @@
+.repos_board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 16px;
+
+  width: 100%;
+  height: calc(100vh - 68.8px);
+  padding: 24px;
+  overflow: auto;
+
+}

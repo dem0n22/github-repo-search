@@ -1,0 +1,162 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  background-color: var(--COLOR-BACKGROUND-CARD);
+  outline: 1px solid var(--COLOR-BORDER-CARD);
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.card_header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font: 500 13px/1.6 var(--FF);
+  color: var(--COLOR-TEXT-PRINCIPAL);
+}
+
+.card_repo_name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: var(--COLOR-TEXT-REPOSITORY);
+  font: 500 19px/1.3 var(--FF);
+}
+
+.card_repo_user {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.card_avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.card_body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font: normal 11px/1.6 var(--FF);
+  color: var(--COLOR-TEXT-SECONDARY);
+}
+
+.card_metrics {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.language_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.language_dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  outline-width: 1px;
+  outline-offset: 2px;
+  outline-color: hsla(255 255 255 / 0.2);
+}
+
+.bg_blue {
+  /*outline-color: var(--COLOR-BLUE-BORDER);*/
+  background-color: var(--COLOR-BLUE-200);
+}
+
+.bg_dark-blue {
+  background-color: var(--COLOR-BLUE-300);
+}
+
+.bg_blue-500 {
+  background-color: var(--COLOR-BLUE-500);
+}
+
+.bg_orange-100 {
+  background-color: var(--COLOR-ORANGE-100);
+}
+
+.bg_orange-200 {
+  background-color: var(--COLOR-ORANGE-200);
+}
+
+.bg_green {
+  /*outline-color: var(--COLOR-GREEN-BORDER);*/
+  background-color: var(--COLOR-GREEN);
+}
+
+.bg_yellow-100 {
+  background-color: var(--COLOR-YELLOW-100);
+}
+
+.bg_yellow-200 {
+  background-color: var(--COLOR-YELLOW-200);
+}
+
+.bg_red {
+  background-color: var(--COLOR-RED);
+}
+
+.bg_turquoise {
+  background-color: var(--COLOR-TURQUOISE);
+}
+
+.bg_pink-100 {
+  background-color: var(--COLOR-PINK-100);
+}
+
+.bg_pink-200 {
+  background-color: var(--COLOR-PINK-200);
+}
+
+.bg_mustard {
+  background-color: var(--COLOR-MUSTARD);
+}
+
+.bg_purple-100 {
+  background-color: var(--COLOR-PURPLE-100);
+}
+
+.bg_purple-200 {
+  background-color: var(--COLOR-PURPLE-200);
+}
+
+.bg_purple-300 {
+  background-color: var(--COLOR-PURPLE-300);
+}
+
+.bg_gray {
+  background-color: var(--COLOR-GRAY);
+}
+
+.bg_cream {
+  background-color: var(--COLOR-CREAM);
+}
+
+.stars_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon_github {
+  display: grid;
+  place-content: center;
+}
+
+.container_skeleton {
+  line-height: 0;
+}
