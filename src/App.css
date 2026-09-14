@@ -182,6 +182,7 @@ button:hover {
 }
 
 .state_search {
+  color: var(--COLOR-TEXT-SECONDARY);
   font: 600 large/1.5 var(--FF);
 }
 
