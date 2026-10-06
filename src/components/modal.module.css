@@ -1,0 +1,95 @@
+.modal_background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  background-color: var(--OVERLAY-BACKDROP);
+  opacity: 0;
+  pointer-events: none;
+
+  animation: backdrop_open 0.3s ease-out forwards;
+}
+
+.modal_background.close {
+  animation: backdrop_close 0.3s ease-out forwards;
+}
+
+@keyframes backdrop_open {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes backdrop_close {
+  from {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal_wrapper {
+  height: 90vh;
+
+  padding: 1.25rem;
+  border-radius: 8px;
+  background-color: var(--COLOR-BACKGROUND-INSET);
+  box-shadow: var(--BOX-SHADOW-SMALL);
+
+  opacity: 0;
+  scale: 0.75;
+  pointer-events: none;
+
+  animation: modal_open 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.modal_wrapper.close {
+  animation: modal_close 0.3s cubic-bezier(1, 0, 0, 1) forwards;
+}
+
+
+@keyframes modal_open {
+  from {
+    opacity: 0;
+    scale: 0.75;
+    pointer-events: none;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes modal_close {
+  from {
+    opacity: 1;
+    scale: 1;
+    pointer-events: auto;
+  }
+
+  to {
+    opacity: 0;
+    scale: 0.75;
+    pointer-events: none;
+  }
+}

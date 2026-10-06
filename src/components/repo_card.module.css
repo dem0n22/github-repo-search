@@ -1,21 +1,32 @@
-.wrapper {
+.card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  border-radius: .375rem;
+  color: var(--COLOR-FONT-DEFAULT);
+  border-color: var(--COLOR-BORDER-DEFAULT);
+  background-color: transparent;
+  border-width: .0625rem;
+  padding: 1rem;
+  border-style: solid;
+  text-align: start;
+  cursor: pointer;
+}
 
-  background-color: var(--COLOR-BACKGROUND-CARD);
-  outline: 1px solid var(--COLOR-BORDER-CARD);
-  padding: 16px;
-  border-radius: 4px;
+.card:hover {
+  outline: .125rem solid var(--COLOR-BORDER-ACCENT-EMPHASIS);
+}
+
+.card:focus-visible {
+  outline: .125rem solid var(--COLOR-BLUE-700); 
 }
 
 .card_header {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-
-  font: 500 13px/1.6 var(--FF);
-  color: var(--COLOR-TEXT-PRINCIPAL);
+  gap: .375rem;
 }
 
 .card_repo_name {
@@ -23,138 +34,75 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  color: var(--COLOR-TEXT-REPOSITORY);
-  font: 500 19px/1.3 var(--FF);
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .card_repo_user {
   display: flex;
-  flex-direction: row;
-  gap: 4px;
+  align-items: center;
 }
 
 .card_avatar {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  overflow: hidden;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
-.card_body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  font: normal 11px/1.6 var(--FF);
-  color: var(--COLOR-TEXT-SECONDARY);
+.user_name {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.card_metrics {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 20px;
+.card_content {
+  margin-top: 1rem;
+  font-size: .875rem;
+  font-weight: 400;
+
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.language_wrapper {
+.card_footer {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+  color: var(--COLOR-FONT-MUTED);
+}
+
+.footer_item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  font-size: .75rem;
+}
+
+.footer_spacer {
+  margin-left: .5rem;
+  margin-right: .5rem;
 }
 
 .language_dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  outline-width: 1px;
-  outline-offset: 2px;
-  outline-color: hsla(255 255 255 / 0.2);
+  margin-right: .5rem;
+  border-style: solid;
+  border-width: .0625rem;
+  border-color: color-mix(in srgb, var(--COLOR-GRAY-820) 15%, transparent);
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
 }
 
-.bg_blue {
-  /*outline-color: var(--COLOR-BLUE-BORDER);*/
-  background-color: var(--COLOR-BLUE-200);
-}
-
-.bg_dark-blue {
-  background-color: var(--COLOR-BLUE-300);
-}
-
-.bg_blue-500 {
-  background-color: var(--COLOR-BLUE-500);
-}
-
-.bg_orange-100 {
-  background-color: var(--COLOR-ORANGE-100);
-}
-
-.bg_orange-200 {
-  background-color: var(--COLOR-ORANGE-200);
-}
-
-.bg_green {
-  /*outline-color: var(--COLOR-GREEN-BORDER);*/
-  background-color: var(--COLOR-GREEN);
-}
-
-.bg_yellow-100 {
-  background-color: var(--COLOR-YELLOW-100);
-}
-
-.bg_yellow-200 {
-  background-color: var(--COLOR-YELLOW-200);
-}
-
-.bg_red {
-  background-color: var(--COLOR-RED);
-}
-
-.bg_turquoise {
-  background-color: var(--COLOR-TURQUOISE);
-}
-
-.bg_pink-100 {
-  background-color: var(--COLOR-PINK-100);
-}
-
-.bg_pink-200 {
-  background-color: var(--COLOR-PINK-200);
-}
-
-.bg_mustard {
-  background-color: var(--COLOR-MUSTARD);
-}
-
-.bg_purple-100 {
-  background-color: var(--COLOR-PURPLE-100);
-}
-
-.bg_purple-200 {
-  background-color: var(--COLOR-PURPLE-200);
-}
-
-.bg_purple-300 {
-  background-color: var(--COLOR-PURPLE-300);
-}
-
-.bg_gray {
-  background-color: var(--COLOR-GRAY);
-}
-
-.bg_cream {
-  background-color: var(--COLOR-CREAM);
-}
-
-.stars_wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4px;
-}
-
-.icon_github {
-  display: grid;
-  place-content: center;
+.stars_icon {
+  vertical-align: text-bottom;
+  margin-right: .375rem;
 }
 
 .container_skeleton {

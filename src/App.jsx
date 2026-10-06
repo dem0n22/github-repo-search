@@ -1,18 +1,23 @@
 import React from 'react';
 
-import FiltersRow from './components/filters_row'
-import RepoCardsBoard from './components/repo_cards_board';
+import FiltersRow from './components/FiltersRow'
+import RepoCardsBoard from './components/RepoCardsBoard';
+import RepoModal from './components/RepoModal';
 
-import RepoCardsBoardSkeleton from './components/repo_cards_board_skeleton';
+import RepoCardsBoardSkeleton from './components/RepoCardsBoardSkeleton';
 
 import { Sun, Moon } from 'lucide-react';
 
 import './App.css'
 import  'react-loading-skeleton/dist/skeleton.css'
 
+export const ModalContext = React.createContext(null)
+
 function App() {
   const [state, setState] = React.useState({status: 'idle', repos: [], error: null});
   const [mode, setMode] = React.useState((() => localStorage.getItem('mode') ?? 'dark'));
+  const [openModal, setOpenModal] = React.useState(false);
+  const [repoSelected, setRepoSelected] = React.useState(null);
 
   React.useEffect(() => {
     localStorage.setItem('mode', mode)
@@ -52,7 +57,7 @@ function App() {
         : (
           <div className='state_wrapper state_not-found'>  
             <p>{"(≥_<)}"}</p>
-            <p>No se encontraron respositorios.</p>);
+            <p>No se encontraron respositorios.</p>
           </div>
         )
       
@@ -70,7 +75,7 @@ function App() {
     case 'error_fetch': {
       result = (
         <div className='state_wrapper state_error-fetch'>
-          <p className='error_state'>...</p>;
+          <p className='error_state'>...</p>
           <p className='error_description'>Sin conexión. Revisa tu red e intenta de nuevo.</p>
         </div>
       )
@@ -81,17 +86,19 @@ function App() {
   }
 
   return (
-    <div className='wrapper_content'>
-      <div className='content_header'>
+    <ModalContext value={{openModal, setOpenModal, setRepoSelected}}>
+      <div className='app-header'>
         <FiltersRow onSearch={getResults}/>
-        <button type='button' onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
+        <button className='button_base button_icon' type='button' onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
           {mode === 'light' ? <Moon className='icon'/> : <Sun className='icon' />}
         </button>
       </div>
-      <div className="content_body">
+      <div className="app-body">
         {result}
       </div>
-    </div>
+
+      {repoSelected && <RepoModal repo={repoSelected}/>}
+    </ModalContext>
   )
 }
 

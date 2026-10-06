@@ -1,4 +1,4 @@
-import RepoCard from "./repo_card"
+import RepoCard from "./RepoCard"
 
 import styles from "../components/repo_cards_board.module.css"
 

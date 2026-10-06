@@ -1,24 +1,23 @@
 import React from "react";
 import styles from "../components/filters_row.module.css";
 
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 
-export default function FiltersRow({onSearch}) {
+export default function FiltersRow({ onSearch }) {
   const [inputValue, setInputValue] = React.useState('');
 
   function handlerSubmit(event) {
     event.preventDefault();
-    onSearch(inputValue)
+    onSearch(inputValue);
   }
 
   return (
     <div>
-      <form 
-        onSubmit={handlerSubmit}
-      >
+      <form onSubmit={handlerSubmit}>
+
         <div className={styles.search_wrapper}>
           <div className={styles.search_box}>
-            <Search className="icon" />
+            <Search className={`${styles.search_icon} icon`} />
             <input 
               type="text"
               value={inputValue}
